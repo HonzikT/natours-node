@@ -4,3 +4,5 @@ node_modules
 .eslintrc.json
 .prettierrc
 config.env
+
+.DS_Store
