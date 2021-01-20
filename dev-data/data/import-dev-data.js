@@ -15,34 +15,34 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   })
-  .then(() => console.log('DB connection succesful'));
+  .then(() => console.log('DB connection succesful')); // eslint-disable-line no-console
 
 // Read JSON file
-const tours = JSON.parse(fs.readFileSync('tours-simple.json', 'utf-8'))
+const tours = JSON.parse(fs.readFileSync('tours-simple.json', 'utf-8'));
 
 // Import data into DB
 const importData = async () => {
   try {
     await Tour.create(tours);
-    console.log('Data loaded successfully!');
-  } catch(err) {
-    console.log(err);
+    console.log('Data loaded successfully!'); // eslint-disable-line no-console
+  } catch (err) {
+    console.log(err); // eslint-disable-line no-console
   }
   process.exit();
-}
+};
 
 // Delete all data from DB collection
 const deleteData = async () => {
   try {
     await Tour.deleteMany();
-    console.log('Data deleted successfully!');
-  } catch(err) {
-    console.log(err);
+    console.log('Data deleted successfully!'); // eslint-disable-line no-console
+  } catch (err) {
+    console.log(err); // eslint-disable-line no-console
   }
   process.exit();
-}
+};
 
 // Specify action in argv
 if (process.argv[2] === '--import') {
